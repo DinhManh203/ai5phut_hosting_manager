@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard VPS</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2 class="logo-text">AI5PHUT</h2>
+      <span class="material-icons toggle-btn" id="toggle-btn">menu</span>
+    </div>
+
+    <a href="./index.html">
+      <span class="material-icons">dashboard</span>
+      <span class="link-text">Dashboard</span>
+    </a>
+
+    <a href="./dichvu.html">
+      <span class="material-icons">dns</span>
+      <span class="link-text">Dịch vụ VPS</span>
+    </a>
+
+    <!-- Menu cha -->
+    <a href="./thongtinthanhtoan.html">
+      <span class="material-icons">money</span>
+      <span class="link-text">Thông tin thanh toán</span>
+    </a>
+  </div>
+
+
+  <!-- MAIN -->
+  <div class="main">
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <div class="search-box">
+        <input type="text" placeholder="🔍 Tìm kiếm dịch vụ...">
+      </div>
+      <div class="auth-buttons">
+        <a href="./auth/login.html">
+          <button class="login-btn">Đăng nhập</button>
+        </a>
+        <a href="./auth/register.html">
+          <button class="register-btn">Đăng ký</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="stat">
+          <h3>2</h3>
+          <p>VPS đang hoạt động</p>
+        </div>
+        <div class="stat">
+          <h3>25/09</h3>
+          <p>Ngày hết hạn gần nhất</p>
+        </div>
+        <div class="stat">
+          <h3>1</h3>
+          <p>Hóa đơn chờ xử lý</p>
+        </div>
+        <div class="stat">
+          <h3>85%</h3>
+          <p>Dung lượng đã sử dụng</p>
+        </div>
+      </div>
+
+      <!-- VPS List -->
+      <div class="card">
+        <h2>Danh sách VPS</h2>
+        <table>
+          <tr>
+            <th>Tên VPS</th>
+            <th>Địa chỉ IP</th>
+            <th>Trạng thái</th>
+            <th>Ngày hết hạn</th>
+          </tr>
+          <tr>
+            <td>VPS-01</td>
+            <td>123.45.67.89</td>
+            <td><span style="color:lime">Đang chạy</span></td>
+            <td>25/09/2025</td>
+          </tr>
+          <tr>
+            <td>VPS-02</td>
+            <td>123.45.67.90</td>
+            <td><span style="color:orange">Sắp hết hạn</span></td>
+            <td>01/10/2025</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Resource Usage -->
+      <div class="card">
+        <h3>Tài nguyên sử dụng</h3>
+        <p>CPU</p>
+        <div class="progress">
+          <div class="progress-bar" style="width:70%"></div>
+        </div>
+        <p>RAM</p>
+        <div class="progress">
+          <div class="progress-bar" style="width:55%"></div>
+        </div>
+        <p>Ổ cứng</p>
+        <div class="progress">
+          <div class="progress-bar" style="width:80%"></div>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div class="card notifications">
+        <h3>Thông báo gần đây</h3>
+        <ul>
+          <li>
+            <span class="material-icons" style="vertical-align: middle; margin-right: 5px;">warning</span>
+            VPS-02 sắp hết hạn vào <span>01/10/2025</span>
+          </li>
+          <li>
+            <span class="material-icons" style="vertical-align: middle; margin-right: 5px;">check_circle</span>
+            Thanh toán cho VPS-01 đã được xác nhận
+          </li>
+          <li>
+            <span class="material-icons" style="vertical-align: middle; margin-right: 5px;">campaign</span>
+            Khuyến mãi: Giảm 20% cho gói 6 tháng
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuItems = document.querySelectorAll(".menu-item .has-submenu");
+
+      menuItems.forEach(item => {
+        item.addEventListener("click", () => {
+          item.parentElement.classList.toggle("active");
+        });
+      });
+    });
+
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuItems = document.querySelectorAll(".menu-item .has-submenu");
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("toggle-btn");
+
+      // Submenu toggle
+      menuItems.forEach(item => {
+        item.addEventListener("click", () => {
+          item.parentElement.classList.toggle("active");
+        });
+      });
+
+      // Sidebar collapse/expand
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

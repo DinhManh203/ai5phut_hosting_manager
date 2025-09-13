@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết dịch vụ VPS N8N</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+                
+</head>
+
+<body>
+  <!-- ===== SIDEBAR ===== -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2 class="logo-text">AI5PHUT</h2>
+      <span class="material-icons toggle-btn" id="toggle-btn">menu</span>
+    </div>
+
+    <a href="./index.html">
+      <span class="material-icons">dashboard</span>
+      <span class="link-text">Dashboard</span>
+    </a>
+
+    <a href="./dichvu.html">
+      <span class="material-icons">dns</span>
+      <span class="link-text">Dịch vụ VPS</span>
+    </a>
+
+    <!-- Menu cha -->
+    <a href="./thongtinthanhtoan.html">
+      <span class="material-icons">money</span>
+      <span class="link-text">Thông tin thanh toán</span>
+    </a>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <!-- Navbar -->
+    <div class="navbar">
+      <h2>Chi tiết dịch vụ VPS N8N</h2>
+    </div>
+
+    <div class="content">
+      <!-- Chi tiết gói -->
+      <div class="detail-content">
+        <div class="left-column">
+          <!-- Cột trái -->
+          <div>
+            <div class="card">
+              <h3>VPS N8N NVMe – P1</h3>
+              <ul>
+                <li>CPU: 1 Core Intel Platinum</li>
+                <li>RAM: 2 GB</li>
+                <li>Dung lượng: 35 GB NVMe U2 RAID10</li>
+                <li>Băng thông: Không giới hạn</li>
+                <li>Sao lưu: Miễn phí hàng tuần</li>
+                <li>Cài đặt N8N, NocoDB bằng click chuột</li>
+                <li>Nâng cấp N8N bằng click chuột</li>
+                <li>Miễn phí tên miền phụ, SSL</li>
+                <li>Đổi tên miền qua giao diện</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Cấu hình sản phẩm</h3>
+              <div class="form-group">
+                <label>Chọn phần mềm:</label>
+                <select>
+                  <option>N8N V2 (AlmaLinux Minimal 64bit)</option>
+                  <option>N8N V1 (Ubuntu 22.04)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Định kỳ thanh toán:</label>
+                <select>
+                  <option>Theo 03 tháng</option>
+                  <option>Theo 06 tháng</option>
+                  <option>Theo 12 tháng</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Tên miền N8N *</label>
+                <div style="display:flex; gap:5px;">
+                  <input type="text" placeholder="srv-jsqla">
+                  <span style="align-self:center;">.auto.123host.asia</span>
+                </div>
+              </div>
+              <div class="note">
+                💡 Lưu ý: Bạn có thể đổi tên miền của riêng mình sau khi VPS được khởi tạo thành công.
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Cấu hình sản phẩm</h3>
+              <div class="form-group">
+                <label>Chọn phần mềm:</label>
+                <select>
+                  <option>N8N V2 (AlmaLinux Minimal 64bit)</option>
+                  <option>N8N V1 (Ubuntu 22.04)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Định kỳ thanh toán:</label>
+                <select>
+                  <option>Theo 03 tháng</option>
+                  <option>Theo 06 tháng</option>
+                  <option>Theo 12 tháng</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Tên miền N8N *</label>
+                <div style="display:flex; gap:5px;">
+                  <input type="text" placeholder="srv-jsqla">
+                  <span style="align-self:center;">.auto.123host.asia</span>
+                </div>
+              </div>
+              <div class="note">
+                💡 Lưu ý: Bạn có thể đổi tên miền của riêng mình sau khi VPS được khởi tạo thành công.
+              </div>
+            </div>
+          </div>
+          <!-- Cột phải -->
+          <!-- Thông tin đơn hàng -->
+        </div>
+
+        <div class="right-column">
+          <div class="card">
+            <h3>Thông tin đơn hàng</h3>
+            <div class="order-item"><span>VPS N8N NVMe - P1</span><span>717,000 VND</span></div>
+            <div class="order-item"><span>Phí cài đặt</span><span>0 VND</span></div>
+            <div class="order-item"><span>Thời gian</span><span>Theo 03 tháng</span></div>
+            <div class="total">717,000 VND</div>
+            <a href="./thanhtoan.html">
+              <button class="btn">Tiếp tục thanh toán</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const orderCard = document.querySelector(".right-column .card");
+      if (!orderCard) return;
+
+      const parent = orderCard.parentElement;
+      const initialOffset = orderCard.offsetTop;
+
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+
+        if (scrollY > initialOffset) {
+          orderCard.style.position = "absolute";
+
+          if (scrollY - initialOffset < 20) {
+            orderCard.style.top = "20px";
+          } else {
+            orderCard.style.top = scrollY - initialOffset + "px";
+          }
+
+          orderCard.style.width = parent.offsetWidth + "px";
+        } else {
+          orderCard.style.position = "relative";
+          orderCard.style.top = "0";
+          orderCard.style.width = "auto";
+        }
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

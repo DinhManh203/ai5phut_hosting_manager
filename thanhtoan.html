@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh toán</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+
+</head>
+<style>
+  .payment-method {
+    padding: 24px;
+    background: #111;
+    /* nền chính */
+    border: 1px solid #222;
+    /* viền */
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+  }
+
+  h1 {
+    color: #fff;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .copy-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    /* đồng bộ nền */
+    border: 1px solid #222;
+    /* đồng bộ viền */
+    padding: 12px 16px;
+    border-radius: 8px;
+  }
+
+  .copy-box .value {
+    font-family: "Courier New", monospace;
+    font-size: 17px;
+    color: #4dabf7;
+    /* xanh sáng hơn để nổi bật */
+    font-weight: 700;
+  }
+
+  .copy-btn {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .copy-btn:hover {
+    background: #0d47a1;
+  }
+
+  .copy-btn.small {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .account-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .account-info {
+    flex: 1;
+    background: #111;
+    padding: 16px;
+    border: 1px solid #222;
+    border-radius: 10px;
+    color: #eee;
+    height: 35vh;
+  }
+
+  .account-info p {
+    margin: 10px 0;
+    font-size: 15px;
+  }
+
+  .account-info strong {
+    color: #fff;
+    /* chữ đậm hơn */
+  }
+
+  .qr-box {
+    text-align: center;
+    background: #111;
+    padding: 12px;
+    border: 1px solid #222;
+    border-radius: 10px;
+    height: 35vh;
+  }
+
+  .qr-box img {
+    width: 160px;
+    height: 160px;
+    border-radius: 6px;
+  }
+
+  .warning {
+    color: #ff6b6b;
+    /* đỏ sáng nổi bật hơn */
+    font-size: 13px;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+</style>
+
+<body>
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2 class="logo-text">AI5PHUT</h2>
+      <span class="material-icons toggle-btn" id="toggle-btn">menu</span>
+    </div>
+
+    <a href="./index.html">
+      <span class="material-icons">dashboard</span>
+      <span class="link-text">Dashboard</span>
+    </a>
+
+    <a href="./dichvu.html">
+      <span class="material-icons">dns</span>
+      <span class="link-text">Dịch vụ VPS</span>
+    </a>
+
+    <!-- Menu cha -->
+    <a href="./thongtinthanhtoan.html">
+      <span class="material-icons">money</span>
+      <span class="link-text">Thông tin thanh toán</span>
+    </a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <div class="search-box">
+        <input type="text" placeholder="🔍 Tìm kiếm dịch vụ...">
+      </div>
+      <div class="auth-buttons">
+        <a href="./auth/login.html">
+          <button class="login-btn">Đăng nhập</button>
+        </a>
+        <a href="./auth/register.html">
+          <button class="register-btn">Đăng ký</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+      <h1>Phương thức thanh toán</h1>
+
+      <div class="card payment-method">
+        <!-- Nội dung chuyển tiền -->
+        <div class="form-group">
+          <label style="color: #fff;">Nội dung chuyển tiền:</label>
+          <div class="copy-box">
+            <span id="transferCode" class="value">Đang tạo...</span>
+            <button class="copy-btn" onclick="copyCode()">
+              <span class="material-icons">content_copy</span> Sao chép
+            </button>
+          </div>
+        </div>
+
+        <!-- Thông tin tài khoản -->
+        <div class="account-box">
+          <div class="account-info">
+            <p><strong>Tên ngân hàng:</strong> Á Châu (ACB)</p>
+            <div style="display: flex; justify-content: space-between;">
+              <p>
+                <strong>Số TK:</strong> 45638897
+              </p>
+              <button class="copy-btn small" onclick="copyText('45638897')">
+                <span class="material-icons">content_copy</span>
+              </button>
+            </div>
+            <p><strong>Tên TK:</strong> DO DINH MANH</p>
+            <div style="display: flex; justify-content: space-between;">
+              <p>
+                <strong>Nội dung chuyển tiền:</strong>
+                <span id="transferCode2">Đang tạo...</span>
+              </p>
+              <button class="copy-btn small" onclick="copyCode()">
+                <span class="material-icons">content_copy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- QR code -->
+          <div class="qr-box">
+            <img src="./image/Screenshot 2025-09-13 163136.png" alt="QR Code">
+            <p class="warning">
+              Không lưu số tài khoản và nội dung chuyển tiền<br>
+              vì chúng tôi thường xuyên thay đổi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="./js/script.js"></script>
+
+  <script>
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".sidebar a").forEach(link => {
+      const linkPage = link.getAttribute("href");
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+
+  <script>
+    function generateCode(length = 8) {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      let code = "";
+      for (let i = 0; i < length; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      return code;
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Đã sao chép: " + text);
+      });
+    }
+
+    function copyCode() {
+      const code = document.getElementById("transferCode").textContent;
+      copyText(code);
+    }
+
+    // khởi tạo mã random khi tải trang
+    document.addEventListener("DOMContentLoaded", () => {
+      const code = generateCode();
+      document.getElementById("transferCode").textContent = code;
+      document.getElementById("transferCode2").textContent = code;
+    });
+  </script>
+
+
+</body>
+
+</html>

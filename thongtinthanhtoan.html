@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard VPS</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2 class="logo-text">AI5PHUT</h2>
+      <span class="material-icons toggle-btn" id="toggle-btn">menu</span>
+    </div>
+
+    <a href="./index.html">
+      <span class="material-icons">dashboard</span>
+      <span class="link-text">Dashboard</span>
+    </a>
+
+    <a href="./dichvu.html">
+      <span class="material-icons">dns</span>
+      <span class="link-text">Dịch vụ VPS</span>
+    </a>
+
+    <!-- Menu cha -->
+    <a href="./thongtinthanhtoan.html">
+      <span class="material-icons">money</span>
+      <span class="link-text">Thông tin thanh toán</span>
+    </a>
+  </div>
+
+    <!-- MAIN -->
+    <div class="main">
+        <!-- NAVBAR -->
+        <div class="navbar">
+            <div class="search-box">
+                <input type="text" placeholder="🔍 Tìm kiếm dịch vụ...">
+            </div>
+            <div class="auth-buttons">
+                <a href="./auth/login.html">
+                    <button class="login-btn">Đăng nhập</button>
+                </a>
+                <a href="./auth/register.html">
+                    <button class="register-btn">Đăng ký</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- SUMMARY SECTION -->
+        <div class="summary-card">
+            <h3>Tóm tắt</h3>
+            <div class="summary-row">
+                <div class="summary-label">Ngày đăng ký</div>
+                <div class="summary-value">27/06/2025</div>
+            </div>
+            <div class="summary-row">
+                <div class="summary-label">Trạng thái</div>
+                <div class="summary-value status-active">
+                    Hoạt động
+                    <button class="cancel-btn">Yêu cầu hủy dịch vụ</button>
+                </div>
+            </div>
+            <div class="summary-row">
+                <div class="summary-label">Thanh toán định kỳ</div>
+                <div class="summary-value">880,000 VND (Theo tháng)</div>
+            </div>
+            <div class="summary-row">
+                <div class="summary-label">Hoá đơn tiếp theo</div>
+                <div class="summary-value">20/09/2025</div>
+            </div>
+            <div class="summary-row">
+                <div class="summary-label">Ngày hết hạn</div>
+                <div class="summary-value">27/09/2025</div>
+            </div>
+
+           <hr style="border: none; height: 1px; background-color: #ccc; margin-top: 20px; margin-bottom: 20px; ">
+
+            <!-- Transaction History -->
+            <div class="transaction-history">
+                <h2>Lịch sử giao dịch</h2>
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>Số hóa đơn #</th>
+                            <th>Trạng thái</th>
+                            <th>Tổng</th>
+                            <th>Ngày tạo</th>
+                            <th>Ngày đến hạn</th>
+                            <th>Date Paid</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">#140268</a></td>
+                            <td><span class="tx-status-paid">ĐÃ THANH TOÁN</span></td>
+                            <td>950,400 VND</td>
+                            <td>20/08/2025</td>
+                            <td>27/08/2025</td>
+                            <td>27/08/2025</td>
+                            <td><span class="material-icons">chevron_right</span></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">#139126</a></td>
+                            <td><span class="tx-status-paid">ĐÃ THANH TOÁN</span></td>
+                            <td>950,400 VND</td>
+                            <td>20/07/2025</td>
+                            <td>27/07/2025</td>
+                            <td>26/07/2025</td>
+                            <td><span class="material-icons">chevron_right</span></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">#138242</a></td>
+                            <td><span class="tx-status-paid">ĐÃ THANH TOÁN</span></td>
+                            <td>968,000 VND</td>
+                            <td>27/06/2025</td>
+                            <td>27/06/2025</td>
+                            <td>27/06/2025</td>
+                            <td><span class="material-icons">chevron_right</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>
