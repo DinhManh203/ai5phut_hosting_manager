@@ -9,42 +9,78 @@
 body {
   display: flex;
   min-height: 100vh;
-  background-color: #f9f9f9; /* nền sáng */
-  color: #111; /* chữ đen */
+  background-color: #f9f9f9;
+  color: #111;
   line-height: 1.5;
 }
 
 /* ===== SIDEBAR ===== */
 .sidebar {
-  width: 250px;
-  background: #fff;
-  border-right: 1px solid #10b981;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
   position: fixed;
-  left: 0;
   top: 0;
-  transition: width 0.3s ease;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding-top: 20px;
+  background-color: #fff;
   overflow: hidden;
+  transition: width 0.3s ease, padding 0.3s ease;
+  transform: translateX(0);
+  border-right: 1px solid #10b981;
+  z-index: 1000;
+}
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+.sidebar a .link-text {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed a .link-text {
+  opacity: 0;
+}
+
+.sidebar .nav {
+  display: flex;
+  padding: 20px 10px;
+  gap: 20px;
+  color: #fff;
 }
 
 /* Thu gọn */
 .sidebar.collapsed {
   width: 70px;
+  overflow: hidden;
 }
 
 /* Header trong sidebar */
 .sidebar-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 15px 20px;
+  margin-left: 5px;
+}
+
+.sidebar .link-text {
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, visibility 0.2s ease, width 0.2s ease;
+}
+.sidebar.collapsed .link-text {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  overflow: hidden;
 }
 
 .logo-text {
-  font-size: 18px;
+  font-size: 32px;
   font-weight: bold;
-  color: #111;
+  color: #10b981;
   transition: opacity 0.3s ease;
 }
 
@@ -52,7 +88,15 @@ body {
 .sidebar.collapsed .logo-text,
 .sidebar.collapsed .link-text {
   opacity: 0;
-  pointer-events: none;
+  display: none;
+  transition: opacity 0.1s ease;
+}
+
+.toggle-btn {
+  background: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #10b981;
 }
 
 .sidebar a {
@@ -91,6 +135,24 @@ body {
 .sidebar.collapsed a .material-icons {
   margin-right: 0;
 }
+
+/* Text trong sidebar */
+.sidebar .link-text,
+.sidebar .logo-text {
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+  white-space: nowrap;
+}
+
+.sidebar.collapsed .link-text,
+.sidebar.collapsed .logo-text {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  overflow: hidden;
+}
+
 
 /* Submenu */
 .sidebar .menu-item {
@@ -139,6 +201,12 @@ body {
 .sidebar.collapsed ~ .main {
   margin-left: 70px;
 }
+
+.sidebar.no-transition,
+.sidebar.no-transition * {
+  transition: none !important;
+}
+
 
 /* ===== NAVBAR ===== */
 .navbar {
@@ -324,7 +392,6 @@ input:focus, select:focus {
 
 .right-column .card.fixed {
   position: fixed;
-  top: 20px;
   right: 5;
   width: 24.9%;
   z-index: 1000;
