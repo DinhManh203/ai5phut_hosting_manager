@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="./css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+  <style>
+    .toggle-btn {
+      cursor: pointer;
+    }
+  </style>
 
 </head>
 
@@ -160,23 +165,14 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const menuItems = document.querySelectorAll(".menu-item .has-submenu");
       const sidebar = document.getElementById("sidebar");
       const toggleBtn = document.getElementById("toggle-btn");
-
-      // Submenu toggle
-      menuItems.forEach(item => {
-        item.addEventListener("click", () => {
-          item.parentElement.classList.toggle("active");
-        });
-      });
 
       // Sidebar collapse/expand
       toggleBtn.addEventListener("click", () => {
         sidebar.classList.toggle("collapsed");
       });
     });
-
   </script>
 
 </body>

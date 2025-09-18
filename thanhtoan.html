@@ -13,7 +13,7 @@
 <style>
   .payment-method {
     padding: 24px;
-    background: #111;
+    background: #fdfdfd;
     /* nền chính */
     border: 1px solid #222;
     /* viền */
@@ -34,7 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #111;
+    background: #fdfdfd;
     /* đồng bộ nền */
     border: 1px solid #222;
     /* đồng bộ viền */
@@ -84,7 +84,7 @@
 
   .account-info {
     flex: 1;
-    background: #111;
+    background: #fdfdfd;
     padding: 16px;
     border: 1px solid #222;
     border-radius: 10px;
@@ -95,16 +95,17 @@
   .account-info p {
     margin: 10px 0;
     font-size: 15px;
+    color: #111111;
   }
 
   .account-info strong {
-    color: #fff;
+    color: #111111;
     /* chữ đậm hơn */
   }
 
   .qr-box {
     text-align: center;
-    background: #111;
+    background: #fdfdfd;
     padding: 12px;
     border: 1px solid #222;
     border-radius: 10px;
@@ -175,7 +176,7 @@
       <div class="card payment-method">
         <!-- Nội dung chuyển tiền -->
         <div class="form-group">
-          <label style="color: #fff;">Nội dung chuyển tiền:</label>
+          <label style="color: #111111;">Nội dung chuyển tiền:</label>
           <div class="copy-box">
             <span id="transferCode" class="value">Đang tạo...</span>
             <button class="copy-btn" onclick="copyCode()">
