@@ -11,23 +11,23 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #111;
-  color: #fff;
+  background: #f5f7fa; /* nền sáng nhẹ */
+  color: #111111;
 }
 
 /* ===== AUTH CONTAINER ===== */
 .auth-container {
-  background: #1a1a1a;
+  background: #ffffff;
   padding: 40px;
-  border-radius: 8px;
+  border-radius: 10px;
   width: 350px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .auth-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #fff;
+  color: #333; /* chữ đậm hơn */
 }
 
 .form-group {
@@ -37,22 +37,24 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 6px;
-  color: #ccc;
+  color: #555; /* dễ đọc hơn */
   font-size: 14px;
 }
 
 .form-group input {
   width: 100%;
   padding: 10px;
-  border: none;
+  border: 1px solid #ddd; /* thêm viền sáng */
   border-radius: 6px;
   outline: none;
-  background: #333;
-  color: #fff;
+  background: #fff;
+  color: #111111;
+  transition: 0.3s;
 }
 
 .form-group input:focus {
-  border: 1px solid #4caf50;
+  border: 1px solid #5cd85c; /* xanh sáng hơn */
+  box-shadow: 0 0 5px rgba(92, 216, 92, 0.4);
 }
 
 button {
@@ -60,15 +62,16 @@ button {
   padding: 10px;
   border: none;
   border-radius: 6px;
-  background: #4caf50;
+  background: #5cd85c; /* xanh lá sáng */
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   margin-top: 10px;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #45a049;
+  background: #45c645;
 }
 
 .switch-link {
@@ -78,10 +81,26 @@ button:hover {
 }
 
 .switch-link a {
-  color: #4caf50;
+  color: #5cd85c;
   text-decoration: none;
 }
 
 .switch-link a:hover {
+  text-decoration: underline;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.forgot-password a {
+  color: #5cd85c;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.forgot-password a:hover {
   text-decoration: underline;
 }

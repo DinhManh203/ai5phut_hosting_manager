@@ -14,6 +14,41 @@ body {
   line-height: 1.5;
 }
 
+/* ===== STATS ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.stat {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.stat h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #10b981; /* màu chính */
+}
+
+.stat p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
 /* ===== SIDEBAR ===== */
 .sidebar {
   position: fixed;
@@ -46,17 +81,15 @@ body {
 .sidebar .nav {
   display: flex;
   padding: 5px 10px;
-  gap: 20px;
+  gap: 40px;
   color: #fff;
 }
 
-/* Thu gọn */
 .sidebar.collapsed {
   width: 70px;
   overflow: hidden;
 }
 
-/* Header trong sidebar */
 .sidebar-header {
   display: flex;
   justify-content: space-between;
@@ -223,7 +256,6 @@ body {
 /* ===== NAVBAR ===== */
 .navbar {
   background-color: #fff;
-  border: 1px solid #10b981;
   padding: 12px 25px;
   display: flex;
   justify-content: space-between;
@@ -509,7 +541,6 @@ body {
 
 .payment-method {
   display: flex;
-  align-items: center;
   gap: 10px;
   padding: 15px;
   background: #f8fafc;
@@ -1264,7 +1295,6 @@ input:focus, select:focus {
     padding: 8px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     background-color: #fff;
     border-top: 1px solid #10b981;
     border-right: none;
@@ -1284,7 +1314,6 @@ input:focus, select:focus {
     display: none;
   }
   
-  /* FIXED: Uniform width for all menu items on mobile */
   .sidebar a,
   .sidebar .menu-item > .has-submenu {
     flex: 1;
@@ -1295,7 +1324,7 @@ input:focus, select:focus {
     gap: 4px;
     padding: 8px 4px;
     margin: 0;
-    max-width: calc(100vw / 8); /* Adjust based on number of menu items */
+    max-width: calc(100vw / 8);
     min-width: 60px;
     text-align: center;
     border-radius: 8px;
